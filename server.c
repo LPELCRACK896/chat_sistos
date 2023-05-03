@@ -280,7 +280,7 @@ void *client_handler(void *client_data_ptr) {
     if (user_option->op == 1) {
         pthread_mutex_lock(&shared_data_mutex);
         ChatSistOS__NewUser *new_user = user_option->createuser;
-        ConnectedUser *existing_connected_user = find_user_by_name(new_user->username);
+        ConnectedUser *existing_connected_user = NULL;//find_user_by_name(new_user->username);
         ChatSistOS__User *existing_user = NULL;
 
         if (existing_connected_user != NULL) {
